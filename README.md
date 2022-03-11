@@ -63,11 +63,13 @@ http://rickandmorty-bucket.s3-website-us-east-1.amazonaws.com
 
 It uses lazy loading on the routing module to ensure all data is loaded only when called, no before. 
 
-## UI
+## UI and responsiveness
 
 It uses angular material modules for some elements of the ui like buttons, menu, toolbar, paginator, icons. 
 
 It also uses bootstrap to help with the grid and some elements of the layout.
+
+It should look ok on mobile too.
 
 ## Running unit tests
 
