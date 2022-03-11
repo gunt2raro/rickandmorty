@@ -17,7 +17,7 @@ phases:
   post_build:
     commands:
       - echo "copy files to bucket public"
-      - aws s3 cp dist-real s3://rickandmorty-front --recursive --metadata-directive REPLACE --content-encoding 'gzip' --acl public-read
+      - aws s3 cp dist-real s3://rickandmorty-bucket --recursive --metadata-directive REPLACE --content-encoding 'gzip' --acl public-read
       - echo "copy files to bucket private"
 artifacts:
   files:
