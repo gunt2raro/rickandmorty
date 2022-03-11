@@ -1,0 +1,16 @@
+<div class="character-wrapper">
+    <img [src]="character?.image" class="img-thumbnail">
+    <div class="character-content">
+        <p><strong>{{ character?.name }}</strong></p>
+        <div class="d-flex align-items-center">
+            <mat-icon [color]="character?.status == 'Alive' ? 'accent' : 'warn'">{{character?.status == 'Alive' ? 'hdr_strong': 'hdr_weak'}}</mat-icon> <span class="ml-3">{{character?.status}}</span>
+        </div>
+        <div class="character-footer">
+            <button 
+                mat-flat-button
+                (click)="more(character)">
+                More info
+            </button>
+        </div>
+    </div>
+</div>

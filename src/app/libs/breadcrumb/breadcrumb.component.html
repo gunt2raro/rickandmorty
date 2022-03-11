@@ -1,0 +1,16 @@
+<div class="breadcrumb-wrapper" *ngIf="breadcrumb$ | async as breadcrumb">
+    <div class="link-tree">
+        <a 
+            mat-icon-button 
+            color="accent" 
+            class="icon-button">
+            <mat-icon>home</mat-icon>
+        </a>
+        <a 
+            mat-button 
+            *ngFor="let url of breadcrumb.urlTree" 
+            (click)="clickOnTree(url.url)"
+            color="accent">/ {{url.name}}</a>
+    </div>
+    <div class="title">{{ breadcrumb.title }}</div>
+</div>

@@ -1,1 +1,141 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+$custom-primary: (
+    50: #e7eaf1,
+    100: #c2cbdd,
+    200: #99a9c7,
+    300: #7087b0,
+    400: #526d9f,
+    500: #1a73e8,
+    600: #2e4c86,
+    700: #27427b,
+    800: #203971,
+    900: #14295f,
+    A100: #98b1ff,
+    A200: #658bff,
+    A400: #3265ff,
+    A700: #1951ff,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #ffffff,
+        A700: #ffffff,
+    ),
+);
+
+$md-customred: (
+    50: #feeae9,
+    100: #fccbc7,
+    200: #faa8a2,
+    300: #f8857c,
+    400: #f76a60,
+    500: #f55044,
+    600: #f4493e,
+    700: #f24035,
+    800: #f0372d,
+    900: #ee271f,
+    A100: #ffffff,
+    A200: #fff1f1,
+    A400: #ffc0be,
+    A700: #ffa7a4,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #000000,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000,
+    ),
+);
+
+$md-customgreen: (
+    50: #e3f4ed,
+    100: #b9e4d1,
+    200: #8bd2b2,
+    300: #5cc093,
+    400: #39b37c,
+    500: #16a565,
+    600: #139d5d,
+    700: #109353,
+    800: #0c8a49,
+    900: #067937,
+    A100: #a8ffc8,
+    A200: #75ffa8,
+    A400: #42ff88,
+    A700: #28ff78,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #000000,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000,
+    ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$rickandmorty-primary: mat.define-palette($custom-primary);
+$rickandmorty-accent: mat.define-palette($md-customgreen);
+
+// The warn palette is optional (defaults to red).
+$rickandmorty-warn: mat.define-palette($md-customred);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$rickandmorty-theme: mat.define-light-theme((
+  color: (
+    primary: $rickandmorty-primary,
+    accent: $rickandmorty-accent,
+    warn: $rickandmorty-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($rickandmorty-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: #f1f3f4;
+}

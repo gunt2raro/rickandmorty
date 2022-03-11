@@ -1,0 +1,18 @@
+<div class="row w-100" *ngIf="episodes$ | async as episodes">
+    <div class="col-12">
+        <mat-paginator 
+            #paginator
+            [length]="episodes.info?.count"
+            (page)="paginatorEventHandler($event, episodes.info?.pages)"
+            [pageSize]="20">
+        </mat-paginator>
+    </div>
+    <div 
+        class="col-sm-6 col-md-4 col-lg-3 mb-3" 
+        *ngFor="let episode of episodes.results">
+        <rm-episode [episode]="episode"></rm-episode>
+    </div>
+    <div class="col-12" *ngIf="episodes.results.length == 0">
+        <h2>No episodes found</h2>
+    </div>
+</div>

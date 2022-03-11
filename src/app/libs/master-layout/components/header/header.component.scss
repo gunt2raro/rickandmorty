@@ -1,0 +1,46 @@
+mat-toolbar {
+    height: 48px;
+    width: 100% !important;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    
+    span.half-divider {
+        flex: 1 1 auto;
+    }   
+    
+    button {
+        color: #1a73e8 !important;
+        background-color: transparent !important;
+    }
+
+    .first-row {
+        display: flex;
+        align-items: center;
+        .search-box {
+            padding-top: 15px;
+        }
+    }
+
+    .second-row {
+        display: none;
+        .search-box {
+            padding-top: 15px;
+        }
+    }
+
+    
+    @media (max-width: 960px) {
+        height: 96px;
+
+        .first-row {
+            .search-box {
+                display: none;
+            }
+        }
+        .second-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

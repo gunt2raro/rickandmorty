@@ -1,0 +1,26 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      - npm install -g @angular/cli
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo "Build prod"
+      - npm run build:prod
+      - echo "Compress application"
+      - npm run compress
+  post_build:
+    commands:
+      - echo "copy files to bucket public"
+      - aws s3 cp dist-real s3://rickandmorty-front --recursive --metadata-directive REPLACE --content-encoding 'gzip' --acl public-read
+      - echo "copy files to bucket private"
+artifacts:
+  files:
+    - '**/*'
+  base-directory: '*'
+  discard-paths: yes

@@ -1,0 +1,20 @@
+<div 
+    class="row w-100 m-auto" 
+    *ngIf="locations$ | async as locations">
+    <div class="col-12 mb-3">
+        <mat-paginator 
+            #paginator
+            [length]="locations.info?.count"
+            (page)="paginatorEventHandler($event, locations.info?.pages)"
+            [pageSize]="20">
+        </mat-paginator>
+    </div>
+    <div 
+        class="col-sm-6 col-md-4 col-lg-3 mb-3" 
+        *ngFor="let location of locations.results">
+        <rm-location [location]="location"></rm-location>
+    </div>
+    <div class="col-12" *ngIf="locations.results.length == 0">
+        <h2>No locations found</h2>
+    </div>
+</div>

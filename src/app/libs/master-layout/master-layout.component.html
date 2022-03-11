@@ -1,0 +1,8 @@
+<rm-loader *ngIf="loading$ | async"[loading]="true"></rm-loader>
+<rm-header></rm-header>
+<div class="master-layout-wrapper">
+    <rm-breadcrumb></rm-breadcrumb>
+    <router-outlet></router-outlet>
+</div>
+<br>
+<rm-footer></rm-footer>

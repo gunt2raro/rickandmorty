@@ -1,0 +1,28 @@
+.breadcrumb-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 890px;
+    max-width: 100%;
+    margin: 0px auto;
+    .link-tree {
+        display: flex;
+        flex-direction: row;
+        a {
+            padding: 0 !important;
+            min-width: fit-content;
+            margin-right: 5px;
+            mat-icon {
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+        .icon-button {
+            width: 15px;
+        }
+    }
+    .title {
+        font-size: 20px;
+        padding-left: 15px;
+        font-weight: bold;
+    }
+}

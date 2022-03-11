@@ -1,0 +1,16 @@
+<div class="episode-wrapper">
+    <div class="episode-header">
+        <h3>{{episode?.episode}}</h3>
+    </div>
+    <div class="episode-body">
+        <p>{{episode?.name}}</p> 
+        <p>{{ episode?.air_date | date }}</p>
+    </div>
+    <div class="episode-footer">
+        <button 
+            mat-flat-button 
+            (click)="characters(episode)">
+            Characters
+        </button>
+    </div>
+</div>

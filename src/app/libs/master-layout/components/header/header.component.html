@@ -1,0 +1,21 @@
+<mat-toolbar>
+    <mat-toolbar-row class="first-row">
+        <span>Rick and Morty</span>
+        <span class="half-divider"></span>
+        <div class="search-box">
+            <ng-container *ngTemplateOutlet="searchField"></ng-container>
+        </div>
+        <button mat-flat-button (click)="location(['episodes'])">Episodes</button>
+        <button mat-flat-button (click)="location(['locations'])">Locations</button>
+        <button mat-flat-button (click)="location(['characters'])">Characters</button>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="second-row">
+        <div class="search-box">
+            <ng-container *ngTemplateOutlet="searchField"></ng-container>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<ng-template #searchField>
+    <rm-search></rm-search>
+</ng-template>

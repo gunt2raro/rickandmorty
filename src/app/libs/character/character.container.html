@@ -1,0 +1,48 @@
+<ng-container *ngIf="character$ | async as character">
+    <div class="row w-100 m-auto mt-3">
+        <div class="col-4">
+            <img [src]="character?.image" class="img-thumbnail">
+        </div>
+        <div class="col-8">
+            <mat-list class="w-100">
+                <mat-list-item>
+                  <mat-icon mat-list-icon>badge</mat-icon>
+                  <div mat-line>Name</div>
+                  <div mat-line id="name">{{character?.name}}</div>
+                </mat-list-item>
+                <mat-list-item *ngIf="character?.type">
+                  <mat-icon mat-list-icon>bubble_chart</mat-icon>
+                  <div mat-line>Type</div>
+                  <div mat-line id="type">{{character?.type}}</div>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon mat-list-icon>{{ character?.gender | lowercase }}</mat-icon>
+                  <div mat-line>Gender</div>
+                  <div mat-line id="gender">{{character?.gender}}</div>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon class="status-icon" mat-list-icon [color]="character?.status == 'Alive' ? 'accent' : 'warn'">
+                    {{character?.status == 'Alive' ? 'hdr_strong': 'hdr_weak'}}
+                  </mat-icon>
+                  <div mat-line>Status</div>
+                  <div mat-line id="status">{{character?.status}}</div>
+                </mat-list-item>
+                <mat-list-item>
+                  <mat-icon mat-list-icon>query_stats</mat-icon>
+                  <div mat-line>Species</div>
+                  <div mat-line id="species">{{character?.species}}</div>
+                </mat-list-item>
+                <mat-list-item  *ngIf="character?.origin">
+                  <mat-icon mat-list-icon>place</mat-icon>
+                  <div mat-line>Origin</div>
+                  <div mat-line id="origin">{{character?.origin?.name}}</div>
+                </mat-list-item>
+                <mat-list-item  *ngIf="character?.location">
+                  <mat-icon mat-list-icon>share_location</mat-icon>
+                  <div mat-line>Last Seen</div>
+                  <div mat-line>{{character?.location?.name}}</div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+</ng-container>
