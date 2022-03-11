@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:prod": "ng build public --prod --aot --build-optimizer --named-chunks",
+    "build:prod": "ng build --prod --aot --build-optimizer --named-chunks",
     "compress": "gzipper --output-file-format [filename].[ext] -i TTF,svg,html,css,js,json,eot,woff,png,woff2,ico,webmanifest,icon --verbose ./dist/rickandmorty ./dist-real",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
