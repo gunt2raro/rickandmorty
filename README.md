@@ -20,27 +20,27 @@ Some events and states of the application use this, like the Search Module, Load
 
 ## Modules
 
-### Characters Grid
+## [Modules] Characters Grid
 
 Characters Grid module contains all the characters logic for filtering and searching for characters, by all, name, episode, location. 
 
 Has pagination to interact with the API to navigate throughout all characters, expect when is filtering by episode or location.
 
-### Characters Detail
+##  [Modules] Characters Detail
 
 Character detail will show a character by id, will show all the info and picture.
 
-### Episodes
+##  [Modules] Episodes
 
 Will show all episodes, you can filter by name with the searchbar. From here you can go to characters grid to filter by episode.
 Has pagination to interact with the API to navigate throughout all episodes.
 
-### Locations
+##  [Modules] Locations
 
 Will show all locations, you can filter by name with the searchbar. From here you can go to characters last located here.
 Has pagination to interact with the API to navigate throughout all locations.
 
-## Graphql module
+##  [Modules] Graphql module
 
 The libs/graphql/graphql.module.ts file contains all the graphql configuration of the project.
 It has a cache configuration by default to ensure all data already loaded is persistent on the UI.
@@ -56,6 +56,8 @@ Run npm run compress to run the compression algorithm. Just to reduce bundle siz
 ## Deployment
 
 To deploy it only uses a hook to master on a AWS Code Pipeline, runs de Code Build with buildspec.yml and uploads to a S3 bucket.
+
+http://rickandmorty-bucket.s3-website-us-east-1.amazonaws.com
 
 ## Lazy Loading 
 
