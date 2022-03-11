@@ -5,10 +5,27 @@
         <div class="search-box">
             <ng-container *ngTemplateOutlet="searchField"></ng-container>
         </div>
-        <button mat-flat-button (click)="location(['episodes'])">Episodes</button>
-        <button mat-flat-button (click)="location(['locations'])">Locations</button>
-        <button mat-flat-button (click)="location(['characters'])">Characters</button>
-        <button mat-icon-button color="primary"><mat-icon>reorder</mat-icon></button>
+        <button class="btn-menu-header" mat-flat-button (click)="location(['episodes'])">Episodes</button>
+        <button class="btn-menu-header" mat-flat-button (click)="location(['locations'])">Locations</button>
+        <button class="btn-menu-header" mat-flat-button (click)="location(['characters'])">Characters</button>
+        <button 
+            class="menu-button-burger" 
+            [matMenuTriggerFor]="menu" 
+            mat-icon-button 
+            color="primary">
+            <mat-icon>reorder</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="location(['episodes'])">
+              <span>Episodes</span>
+            </button>
+            <button mat-menu-item (click)="location(['locations'])">
+              <span>Locations</span>
+            </button>
+            <button mat-menu-item (click)="location(['characters'])">
+              <span>Characters</span>
+            </button>
+        </mat-menu>
     </mat-toolbar-row>
     <mat-toolbar-row class="second-row">
         <div class="search-box">

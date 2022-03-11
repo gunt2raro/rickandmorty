@@ -9,6 +9,6 @@ $breakpoints: ('phone': 640px,
         }
     }
     @else {
-        @warn "no breakpoint, sorry!"
+        @warn "no breakpoint sr, sorry!"
     }
 }

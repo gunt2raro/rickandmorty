@@ -10,7 +10,7 @@ mat-toolbar {
         flex: 1 1 auto;
     }   
     
-    button {
+    button.btn-menu-header {
         color: #1a73e8 !important;
         background-color: transparent !important;
     }
@@ -29,7 +29,12 @@ mat-toolbar {
             padding-top: 15px;
         }
     }
-    
+    .menu-button-burger {
+        display: none;
+        color: #1a73e8 !important;
+        background-color: transparent !important;
+    }
+
     @include screen("desktop") {
         height: 96px;
 
@@ -42,6 +47,14 @@ mat-toolbar {
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+    }
+    @include screen("tablet") {
+        button.btn-menu-header {
+            display: none;
+        }
+        .menu-button-burger {
+            display: flex;
         }
     }
 }
